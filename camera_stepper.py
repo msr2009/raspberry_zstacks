@@ -5,7 +5,6 @@ Raspberry Pi code to run picamera and stepper motor for taking automated z-stack
 a compoound fluorescence microscope.
 
 Matt Rich, 03/2018
-
 """
 
 
