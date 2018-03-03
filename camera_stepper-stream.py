@@ -67,8 +67,12 @@ def zstack(camera, prefix, folder, steps, data_mode):
         step(False)
 
 	#save ndarray
-	for arr in output_array:
-		arr.tofile("{0}{1}_{2}.data".format(folder, prefix, str(i+1), "\t")
+	for r in output_array:
+		#transpose to R, G, and B:
+		arr = r.transpose()
+		np.savetxt("{0}{1}_{2}.red.data".format(folder, prefix, str(i+1), arr[0], delimiter=",")
+		np.savetxt("{0}{1}_{2}.green.data".format(folder, prefix, str(i+1), arr[1], delimiter=",")
+		np.savetxt("{0}{1}_{2}.blue.data".format(folder, prefix, str(i+1), arr[2], delimiter=",")
     	
 
 if __name__ == "__main__":
